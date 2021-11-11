@@ -1,0 +1,15 @@
+<h1>Movies from <%= @list.name %></h1>
+<%= link_to 'Back to lists', lists_path %>
+<br>
+<% @list.movies.each do |movie| %>
+<% bookmark = Bookmark.find_by(movie_id: movie, list_id: @list) %>
+<%= image_tag "#{movie.poster_url}", heigth: 200, width: 150  %>
+<br>
+<%= movie.title %>
+<%= movie.overview %>
+<%= movie.rating %>
+<%= link_to 'Remove movie', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<% end %>
+<br>
+<%= link_to 'Add a movie', new_list_bookmark_path(@list) %>

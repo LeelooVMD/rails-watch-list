@@ -1,0 +1,8 @@
+<h1>Create a list</h1>
+<%= simple_form_for(@list) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to 'Back', lists_path %>
