@@ -1,9 +1,9 @@
 .card-poster {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 180px;
-  width: 300px;
+  width: 350px;
   color: rgb(73, 72, 72);
   font-size: 12px;
   font-weight: lighter;
@@ -11,6 +11,11 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-left: 16px;
+  overflow: hidden;
+  .overview-infos p {
+    text-overflow: ellipsis;
+    max-width: 40ch;
+  }
   img {
     height: 100%;
     width: 120px;
