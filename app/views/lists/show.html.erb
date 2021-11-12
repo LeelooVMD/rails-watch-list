@@ -1,21 +1,27 @@
-<h1>Movies from <%= @list.name %></h1>
-<%= link_to 'Back to lists', lists_path %>
-<br>
-<% @list.movies.each do |movie| %>
-<% bookmark = Bookmark.find_by(movie_id: movie, list_id: @list) %>
-<%= image_tag "#{movie.poster_url}", heigth: 200, width: 150  %>
-<br>
-<%= movie.title %>
-<%= movie.overview %>
-<%= movie.rating %>
-<%= link_to 'Remove movie', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<br>
-
+<div class="banner-show">
+  <div class="container">
+    <h1><%= @list.name %></h1>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add a movie
-</button>
+    <button type="button" class="btn btn-ghost" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add a movie
+    </button>
+  </div>
+</div>
+
+<div class="cards-show">
+  <% @list.movies.each do |movie| %>
+    <% bookmark = Bookmark.find_by(movie_id: movie, list_id: @list) %>
+    <div class="card-poster">
+      <%= image_tag "#{movie.poster_url}"%>
+      <div class="movie-infos">
+        <h3><%= movie.title %></h3>
+        <p><%= movie.overview %></p>
+        <p><%= movie.rating %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+      <%# <%= link_to 'Remove movie', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %> %>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

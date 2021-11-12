@@ -7,9 +7,37 @@
 
 <div class="cards m-4">
   <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <%= link_to list.name, list_path(list) %>
-    </div>
+    <% if list.photo.attached? %>
+    <%# If photo attached, make it a background %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, width: 400, crop: :fill %>')">
+        <%= link_to list.name, list_path(list) %>
+       <div class="delete-button">
+          <%= link_to list_path(list), method: :delete do %>
+          <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    <% elsif list.movies.any? %>
+    <%# If there is no photo attached and there is movies in list, take the first movie's poster as background %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.movies.first.poster_url %>')">
+        <%= link_to list.name, list_path(list) %>
+       <div class="delete-button">
+          <%= link_to list_path(list), method: :delete do %>
+          <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+    <%# If there is no photo attached and no movie, just add a grey background %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))" >
+        <%= link_to list.name, list_path(list) %>
+       <div class="delete-button">
+          <%= link_to list_path(list), method: :delete do %>
+          <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 <br>

@@ -1,0 +1,46 @@
+.card-poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 300px;
+  color: rgb(73, 72, 72);
+  font-size: 12px;
+  font-weight: lighter;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 16px;
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  .movie-infos {
+    margin: 8px;
+    padding: 5px;
+    h3 {
+      font-size: 14px;
+    }
+  }
+}
+
+.cards-show {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+@media(max-width: 992px) {
+  .cards-show {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards-show {
+    grid-template-columns: 1fr;
+  }
+}

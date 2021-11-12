@@ -1,0 +1,34 @@
+.banner-show {
+  background: rgb(2,0,36);
+  background: linear-gradient(22deg, rgba(2,0,36,1) 0%, rgba(242,242,242,1) 28%, rgba(0,212,255,1) 100%);
+  background-size: cover;
+  background-position: center;
+  padding: 30px 0;
+  margin-bottom: 15px;
+  text-align: end;
+  .container {
+    margin-right: 10px;
+  }
+}
+
+.banner-show h1 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: lighter;
+}
+
+.btn-ghost {
+  color: white;
+  border: 1px solid white;
+  padding: 5px 20px;
+  margin-top: 8px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
+}
