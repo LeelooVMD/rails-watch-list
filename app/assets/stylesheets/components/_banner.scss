@@ -1,7 +1,9 @@
 .banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('HDwallpaper_lalaland.jpeg');
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  margin-bottom: 15px;
 }
 
 .banner h1 {
@@ -10,4 +12,19 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+}
+
+.btn-ghost {
+  color: white;
+  border: 1px solid white;
+  padding: 5px 20px;
+  margin-top: 8px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
 }

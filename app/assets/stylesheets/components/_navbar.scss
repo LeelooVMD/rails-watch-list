@@ -10,3 +10,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+#logo-navbar {
+  background-image: asset-url('matthew-henry-2Ts5HnA67k8-unsplash.jpg');
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+  object-position: cover;
+  border-radius: 50%;
+}
